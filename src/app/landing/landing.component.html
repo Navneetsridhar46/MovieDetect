@@ -1,0 +1,14 @@
+<div style="font-family: 'Bungee Spice', cursive; background-color: rgba(8, 8, 24, 0.724);">
+    <div class="container form-control text-center mt-4 p-4">
+        <label class="mb-4 fs-1 mt-2" style="font-family:'Alumni Sans Collegiate One', sans-serif;; color: rgb(218, 201, 21);">Search Movie <i style="color: black;" class="fa-solid fa-magnifying-glass"></i></label>
+        <input [(ngModel)]="movieName" style="font-family:'Work Sans', sans-serif;" type="text" class="form-control mb-4" placeholder="Enter the movie">
+        <button type="button" class="btn btn-success p-3" (click)="movieDetect()" >Search</button>
+    </div>
+    <div class="text-center" *ngIf="movie">
+        <h3 style="color: white;">{{movie.Title}}</h3>
+        <p style="color: white;">Released: {{movie.Released}}</p>
+        <p style="color: white;">Actors: {{movie.Actors}}</p>
+        <p style="color: white;">Plot: {{movie.Plot}}</p>
+        <p style="color: white;">Ratings: {{movie.imdbRating}}</p>
+        <img [src]="movie.Poster" alt="{{movie.Title}}">
+    </div>
